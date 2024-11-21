@@ -50,6 +50,7 @@ public class ShopTest {
     public void foreigners_must_pay_foreign_fee() {
         final User user = new User("Bob", "bob@domain.tld", 25, false, parisAddress);
 
+        assertFalse(Shop.canOrder(user));
         assertTrue(Shop.mustPayForeignFee(user));
     }
 
